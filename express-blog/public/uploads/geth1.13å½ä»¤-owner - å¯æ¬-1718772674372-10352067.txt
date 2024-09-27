@@ -1,0 +1,39 @@
+1、创建账户
+clef newaccount --keystore dev-chain/keystore
+
+2、启动命令 3个命令，建议第三个
+geth  --dev --datadir dev-chain --dev.period 10  --password password.txt
+geth --datadir "." --dev --dev.period 2 --http --http.api eth,web3,net --http.corsdomain "http://remix.ethereum.org" --password password.txt 
+
+geth --dev  --datadir dev-chain --dev.period 10  --http --http.api eth,web3,net --http.corsdomain "*"
+
+3、创世纪区块查看
+geth --datadir "dev-chain"  --dev dumpgenesis
+
+4、cmd命令行窗口查看
+geth attach \\.\pipe\geth.ipc
+
+5、导入自己的账号，src.txt签名不需要加0x,直接放置私钥
+clef    --keystore dev-chain/keystore   importraw  0xd2c168777089ae1b3619be3a04b834b401cc2e4098621a8d6ab5c9c60db93005  不支持
+clef    --keystore dev-chain/keystore   importraw  src.txt
+
+6、交易转账
+eth.sendTransaction({from: eth.coinbase, to: eth.accounts[3], value: web3.toWei(50, "ether")})
+
+7、获取交易
+eth.getTransaction("0x75d1b8f2bef9cc907df63602f006439ae0e144159dc3bda821a6ec6a3532c463")
+
+8、使用创世纪区块，创建私有链，并且开启
+打印创世块信息  
+geth --dev dumpgenesis
+
+新建文件，分别放入创世信息和账户密码  genesis.json  和  password.txt
+
+修改创世文件，替换coinbase地址，设置初始金额
+
+初始化创世纪文件
+ geth  --datadir . init  .\genesis.json（生成geth和keystore两个文件夹）
+
+启动命令  geth --datadir "." --dev --dev.period 2 --http --http.api eth,web3,net --http.corsdomain "http://remix.ethereum.org" --password password.txt --http.port 8888
+
+

@@ -1,0 +1,11 @@
+2024-06-13 19:00:38+0800: Upgrading service if installed...
+2024-06-13 19:00:38+0800: User access was set successfully on the service.
+2024-06-13 19:00:38+0800: The MozillaMaintenance service path is correct.
+2024-06-13 19:00:38+0800: The service description was updated successfully.
+2024-06-13 19:00:38+0800: Sending stop request...
+2024-06-13 19:00:38+0800: Waiting for service stop...
+2024-06-13 19:00:38+0800: Done waiting for service stop, last service state: 1
+2024-06-13 19:00:38+0800: The uninstaller version string could not be updated.
+2024-06-13 19:00:38+0800: The new service binary was copied in.
+2024-06-13 19:00:38+0800: Deleting the old file path on the next reboot: C:\Program Files (x86)\Mozilla Maintenance Service\maintenanceservice_tmp.exe.
+2024-06-13 19:00:38+0800: The service was upgraded successfully
